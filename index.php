@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap css cdn -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
     <!-- proj Css -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -27,42 +27,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto text-center">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link active" href="/">Home</a>
                         <a class="nav-link" href="about-us.php">About Us</a>
                         <a class="nav-link" href="contact-us.php">Contact us</a>
                     </div>
                 </div>
             </div>
         </nav>
-    </header>
-
-  <?php 
-  $file = fopen('csv/test.csv', 'r');
-  $city_values = array();
-  $restaurant_type = array();
-  $i=0;
-while (($line = fgetcsv($file)) !== FALSE) {
-  //$line is an array of the csv elements
-    if($line[2] != "City") {
-    $city_values[] = $line[2];
-    }       
-    if($line[4] != "Type") {
-    $restaurant_type[] = $line[4];
-    }
-    if($i >  5){
-        break;
-    }
-    $i++;
-}
-//$city_values = array_unique($city_values);
-$city_values = array_values($city_values);
-$restaurant_type = array_unique($restaurant_type);
-$restaurant_type = array_values($restaurant_type);
-//print_r($city_values);
-fclose($file);
-  ?>  
+    </header> 
   <script>
-   // let cities = <?php echo json_encode($city_values); ?>;
     let cities = new Array('İstanbul', 'Ankara', 'Diyarbakır', 'Tokat', 'Gaziantep',
     'Afyonkarahisar', 'Edirne', 'Kocaeli', 'Bursa', 'İzmir', 'Sakarya',
     'Elazığ', 'Kayseri', 'Eskişehir', 'Şanlıurfa', 'Samsun', 'Adana',
@@ -78,7 +51,6 @@ fclose($file);
         option_str.options[option_str.length] = new Option(cities[i], cities[i]);
     }
 }
- //let resTypes = <?php echo json_encode($restaurant_type); ?>;
 let resTypes = new Array('Food Court', 'In line', 'Mobile', 'Drive Thru');
 
 const showResTyps = (target_id) => {
@@ -95,7 +67,7 @@ let cityTypes = new Array('Big Cities', 'Other');
 const showCityTyps = (target_id) => {
     let option_str = document.getElementById(target_id);
     option_str.length = 0;
-    option_str.options[0] = new Option('Select location group', '');
+    option_str.options[0] = new Option('Select city group', '');
     option_str.selectedIndex = 0;
     for (var i = 0; i < cityTypes.length; i++) {
         option_str.options[option_str.length] = new Option(cityTypes[i], cityTypes[i]);
@@ -140,7 +112,7 @@ return false;
                     </select>
                 </div>
                 <div class="form-group fg1 gap-2">
-                    <label for="formGroupExampleInput">Location Group</label>
+                    <label for="formGroupExampleInput">City Group</label>
                     <select class="form-select" aria-label="Default select example" id="city_group" name="city_group" required>
                         required>
                         <script>

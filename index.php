@@ -19,7 +19,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000;">
             <div class=" container-fluid">
-                <a class="navbar-brand text-sm-center" href="/demo/restaurant-prediction">Revenue Prediction</a>
+                <a class="navbar-brand text-sm-center" href="/">Eatary Returns</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto text-center">
-                        <a class="nav-link" href="/demo/restaurant-prediction">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                         <a class="nav-link" href="about-us.php">About Us</a>
                         <a class="nav-link" href="contact-us.php">Contact us</a>
                     </div>
@@ -90,12 +90,25 @@ const showResTyps = (target_id) => {
         option_str.options[option_str.length] = new Option(resTypes[i], resTypes[i]);
     }
 }
+let cityTypes = new Array('Big Cities', 'Other');
+
+const showCityTyps = (target_id) => {
+    let option_str = document.getElementById(target_id);
+    option_str.length = 0;
+    option_str.options[0] = new Option('Select location group', '');
+    option_str.selectedIndex = 0;
+    for (var i = 0; i < cityTypes.length; i++) {
+        option_str.options[option_str.length] = new Option(cityTypes[i], cityTypes[i]);
+    }
+}
+
 function myFunction() {
 var restaurant= $("#restaurant :selected").text();
 var city= $("#city :selected").text();
+var cityTypes= $("#city_group :selected").text();
 // Returns successful data submission message when the entered information is stored in database.
-var dataString = 'restaurant=' + restaurant + '&city=' + city;
-if (restaurant == '' || city == '') {
+var dataString = 'restaurant=' + restaurant + '&city=' + city + '&cityTypes=' + cityTypes;
+if (restaurant == '' || city == ''  || cityTypes == '') {
 alert("Please Fill All Fields");
 } else {
 // AJAX code to submit form.
@@ -114,7 +127,7 @@ return false;
 }
   </script>
 <section class="banner">
-    <h1 class="text-center pt-4">Restaurant Revenue Prediction</h1>
+    <h1 class="text-center pt-4">Forecasting Eatery Returns</h1>
     <div>
         <form method="post" class="main-form">
             <div class="fcontainer">
@@ -127,6 +140,15 @@ return false;
                     </select>
                 </div>
                 <div class="form-group fg1 gap-2">
+                    <label for="formGroupExampleInput">Location Group</label>
+                    <select class="form-select" aria-label="Default select example" id="city_group" name="city_group" required>
+                        required>
+                        <script>
+                            showCityTyps("city_group")
+                        </script>
+                    </select>
+                </div>
+                 <div class="form-group fg1 gap-2">
                     <label for="formGroupExampleInput">Restaurant</label>
                     <select class="form-select" aria-label="Default select example" id="restaurant" name="restaurant"
                         required>

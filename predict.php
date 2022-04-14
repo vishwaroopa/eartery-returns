@@ -2,6 +2,7 @@
 // Fetching Values From URL
 $city = $_POST['city'];
 $restaurant = $_POST['restaurant'];
+$cityTypes = $_POST['cityTypes'];
 if($restaurant == "In line") {
     $restaurant = "IL";
 }
@@ -19,7 +20,7 @@ if (isset($_POST['city'])) {
     $result  = [];
     if (($handle = fopen("csv/test.csv", "r")) !== FALSE) {
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-          if(($data[2] == $city) && ($data[4] == $restaurant)) {
+          if(($data[2] == $city) && ($data[4] == $restaurant)  && ($data[3] == $cityTypes)) {
               $id = $data[0];
               break;
           }

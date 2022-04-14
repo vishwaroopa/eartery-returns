@@ -19,7 +19,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000;">
             <div class=" container-fluid">
-                <a class="navbar-brand text-sm-center" href="/restaurant">Revenue Prediction</a>
+                <a class="navbar-brand text-sm-center" href="/">Eatary Returns</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto text-center">
-                        <a class="nav-link" href="/restaurant">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                         <a class="nav-link" href="about-us.php">About Us</a>
                         <a class="nav-link active" href="contact-us.php">Contact us</a>
                     </div>

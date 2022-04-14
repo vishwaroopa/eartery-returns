@@ -12,7 +12,7 @@
 
     <!-- proj Css -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <title>About Us</title>
+    <title>Contact Us</title>
 </head>
 
 <body>

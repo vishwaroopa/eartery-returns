@@ -12,7 +12,7 @@
 
     <!-- proj Css -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <title>Restaurant Revenue Prediction</title>
+    <title>Forecasting Eatery Returns</title>
 </head>
 
 <body>

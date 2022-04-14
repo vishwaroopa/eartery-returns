@@ -67,7 +67,7 @@ let cityTypes = new Array('Big Cities', 'Other');
 const showCityTyps = (target_id) => {
     let option_str = document.getElementById(target_id);
     option_str.length = 0;
-    option_str.options[0] = new Option('Select city group', '');
+    option_str.options[0] = new Option('Select City group', '');
     option_str.selectedIndex = 0;
     for (var i = 0; i < cityTypes.length; i++) {
         option_str.options[option_str.length] = new Option(cityTypes[i], cityTypes[i]);
@@ -112,7 +112,7 @@ return false;
                     </select>
                 </div>
                 <div class="form-group fg1 gap-2">
-                    <label for="formGroupExampleInput">City Group</label>
+                    <label for="formGroupExampleInput">Location Group</label>
                     <select class="form-select" aria-label="Default select example" id="city_group" name="city_group" required>
                         required>
                         <script>
